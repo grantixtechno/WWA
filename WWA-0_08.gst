@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="4" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="5" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Fireteam" id="cf4d-c5b2-c009-6ee5" hidden="false"/>
     <categoryEntry name="Vehicle" id="28fc-e693-9ec3-79a9" hidden="false"/>
@@ -6646,6 +6646,23 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <modifiers>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="8ee7-78a9-1867-4b18" childId="09c2-c3d8-5a9e-4fb8" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="f30c-d3de-dde4-6e04" childId="5da9-afc9-8dd4-691c" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="49b5-5222-39cd-c830" childId="823d-8a02-dfb6-b626" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Escape Hatches" hidden="false" id="e663-f779-4dff-2e44" sortIndex="2">
               <constraints>
@@ -6661,6 +6678,23 @@
                   </characteristics>
                 </profile>
               </profiles>
+              <modifiers>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="8ee7-78a9-1867-4b18" childId="09c2-c3d8-5a9e-4fb8" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="f30c-d3de-dde4-6e04" childId="5da9-afc9-8dd4-691c" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+                <modifier type="set" value="0" field="6207-2ba4-fdc8-1be7">
+                  <conditions>
+                    <condition type="atLeast" value="1" field="selections" scope="49b5-5222-39cd-c830" childId="823d-8a02-dfb6-b626" shared="true" includeChildSelections="true"/>
+                  </conditions>
+                </modifier>
+              </modifiers>
             </selectionEntry>
             <selectionEntry type="upgrade" import="true" name="Exotic Armor Material" hidden="false" id="05b6-0ba9-3e06-e268" sortIndex="3">
               <constraints>
