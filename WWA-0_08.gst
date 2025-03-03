@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="6" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="7" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Fireteam" id="cf4d-c5b2-c009-6ee5" hidden="false"/>
     <categoryEntry name="Vehicle" id="28fc-e693-9ec3-79a9" hidden="false"/>
     <categoryEntry name="Armored Vehicle" id="3991-adb6-157c-ab62" hidden="false"/>
     <categoryEntry name="Team Leader" id="0f4a-6af0-cba4-644f" hidden="false"/>
     <categoryEntry name="Command Ethos" id="ce04-4275-9630-c14e" hidden="false"/>
+    <categoryEntry name="Rules" id="c589-39c3-89bf-49ce" hidden="false"/>
   </categoryEntries>
   <forceEntries>
     <forceEntry name="Force" id="1171-afd4-9793-1bc5" hidden="false" sortIndex="1">
       <categoryLinks>
+        <categoryLink name="Rules" hidden="false" id="dcea-4b2e-59f8-2cdb" targetId="c589-39c3-89bf-49ce" type="categoryEntry"/>
         <categoryLink name="Command Ethos" hidden="false" id="b13e-e7c3-81d3-2b3f" targetId="ce04-4275-9630-c14e"/>
         <categoryLink name="Fireteam" hidden="false" id="48e5-c496-d776-9a4a" targetId="cf4d-c5b2-c009-6ee5">
           <constraints>
@@ -11803,6 +11805,72 @@
         </entryLink>
       </entryLinks>
     </selectionEntry>
+    <selectionEntry type="upgrade" import="true" name="Rules" hidden="false" id="143f-609c-edab-df13" sortIndex="1" defaultAmount="1">
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="force" shared="true" id="7241-710a-f617-e1f6-min" includeChildSelections="false"/>
+        <constraint type="max" value="1" field="selections" scope="force" shared="true" id="7241-710a-f617-e1f6-max" includeChildSelections="false"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink targetId="c589-39c3-89bf-49ce" id="5601-3156-b1af-e1fe" primary="true" name="Rules"/>
+      </categoryLinks>
+      <rules>
+        <rule name="1. General Principles" id="c3ce-0bea-0c1d-e36f" hidden="false">
+          <description>Activated Unit: The unit performing actions.
+
+
+Defending Unit: The targeted unit.
+
+
+Spotting Unit: A friendly unit, other than the Activated Unit, with Line of Sight to the target.
+
+
+Line of Sight (LoS): A straight line drawn from the center of an Activated or Spotting Unit to any part of the target. Weapons do not have a range limit.
+Direct type weapons require LoS from the Activated Unit to the target.
+Indirect type weapons require LoS from the Activated or Spotting Unit to the target.
+Melee Weapons require the Activated unit to be adjacent (2&quot;) to the target.
+
+
+Health: Units and terrain have health. When an Armor Save is failed, the target takes a Wound and loses 1 Health. When a Unit or Terrain piece is reduced to 0 Health, it is removed from the battlefield.</description>
+        </rule>
+        <rule name="2. Game Preparation" id="bd09-9505-6e6a-4c9b" hidden="false">
+          <description>Players assemble forces of equal points value beforehand. Beginners should start with 40 points. A force requires at least 1/4 of it be made up of Fireteam units.
+
+The game is played on a table with enough terrain to block the view from one deployment zone to the other. Forces should be deployed at least 24&quot; apart.
+
+
+Before deploying, choose a Mission to play. Players each roll 1d6 and the winner picks a table edge as their deployment zone, with the opponent deploying on the opposite table edge. Players then alternate placing one unit within 6&quot; of the table edge, starting with the winner.</description>
+        </rule>
+        <rule name="3. Playing the Game" id="455c-aebc-5bd0-06f1" hidden="false">
+          <description>The Game is played in 5 rounds with players alternating in activating one unit each, starting with the player that lost the deployment roll off. During a round, players cannot activate the same unit more than once. In each following round, the player who finished activating first on the previous round starts the new round.</description>
+        </rule>
+        <rule name="4. Activation" id="8e1d-3ebc-0dd3-d87a" hidden="false">
+          <description>The player picks one unit to the be the Activated Unit, and it can perform two actions--either two different actions or the same action twice.</description>
+        </rule>
+        <rule name="5. Actions" id="82f5-1d8b-9506-b21f" hidden="false">
+          <description>These are the four actions a unit can perform:
+Move
+Attack
+Charge
+Use Psychotronics</description>
+        </rule>
+        <rule name="6. Shock Test" id="627c-a3e3-66a7-2f2e" hidden="false">
+          <description>When a unit&apos;s health is reduced below half, that unit must immediately perform a Shock Test.</description>
+        </rule>
+        <rule name="7. Terrain" id="f88e-7dd0-e51f-67eb" hidden="false">
+          <description>If an activated or spotting unit&apos;s view of a target is partially obscured, that target gains +1 Armor during the Attack action.
+
+
+Terrain can be targeted, has armor and health.
+
+
+Terrain Types:
+Foliage
+Cover
+Dangerous Terrain
+Building/Trench</description>
+        </rule>
+      </rules>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
     <entryLink import="true" name="Command Ethos" hidden="false" id="49c3-886c-2789-8432" type="selectionEntry" targetId="2241-5e33-841c-26ae" sortIndex="2"/>
@@ -11815,6 +11883,7 @@
     <entryLink import="true" name="Gun Platform" hidden="false" id="3309-2372-a96e-2bba" type="selectionEntry" targetId="49b5-5222-39cd-c830" sortIndex="9"/>
     <entryLink import="true" name="Armored Fighting Vehicle" hidden="false" id="1c86-5493-fa4c-f767" type="selectionEntry" targetId="17b7-35c3-9c2e-adb6" sortIndex="10"/>
     <entryLink import="true" name="Heavy Gun Platform" hidden="false" id="863e-0168-2d84-631c" type="selectionEntry" targetId="2453-64b5-8d63-7e88" sortIndex="11"/>
+    <entryLink import="true" name="Rules" hidden="false" id="9e79-dfe7-f2f8-6271" type="selectionEntry" targetId="143f-609c-edab-df13" sortIndex="1"/>
   </entryLinks>
   <sharedRules>
     <rule name="Armor Piercing" id="022c-c210-1615-1d75" hidden="false">
@@ -11966,6 +12035,59 @@ Select a friendly unit within Line of Sight, it may be this unit. The selected u
     <rule name="Psychotronic Energies" id="b993-cd29-ddc4-3f8f" hidden="false">
       <description>Cost: 1-6
 Select a friendly unit within Line of Sight. Transfer any number of psychotronic points, up to 6, from this unit&apos;s pool to the selected unit&apos;s pool.</description>
+    </rule>
+    <rule name="Move" id="4b8b-4623-466e-31c7" hidden="false">
+      <description>The player moves the Activated Unit a distance equal to its speed. Each model in a unit must be adjacent (2&quot;) to another model in the unit.
+Embark/Disembark
+Garrison/Ungarrison</description>
+    </rule>
+    <rule name="Embark/Disembark" id="2e02-f9ff-d060-2bcc" hidden="false">
+      <description>Once per move action, at the start or end of a Fireteam or transport unit&apos;s action, a Fireteam may Embark or Disembark from an adjacent (2&quot;) friendly unit with Transport Seats. Embarked Fireteams cannot take other actions until they Disembark, nor can they be targeted. If the transport unit is destroyed, the Embarked Fireteam is too.</description>
+    </rule>
+    <rule name="Garrison/Ungarrison" id="8e22-ac68-abb7-3052" hidden="false">
+      <description>Similar to the Embark/Disembark rule, once per move action, at the start or end of a Fireteam&apos;s action, that unit may Garrison or Ungarrison from an adjacent (2&quot;) building/trench.</description>
+    </rule>
+    <rule name="Attack" id="e519-02c2-261a-5da1" hidden="false">
+      <description>The player picks one of the Activated Unit&apos;s weapon profiles and a target. Then players perform Hit Test and Armor Save rolls.</description>
+    </rule>
+    <rule name="Hit Test" id="8e5e-a42c-7c75-6121" hidden="false">
+      <description>The attacking player rolls #d6 equal to the Fire Rate of the chosen weapon profile multiplied by number of models carrying that weapon profile. Add the Accuracy of the weapon to the die results. Each individual die result + Accuracy equal to or higher than the target&apos;s Armor value is a hit.</description>
+    </rule>
+    <rule name="Armor Save" id="f78d-fd38-c5df-94c3" hidden="false">
+      <description>The defending player rolls #d6 equal to the number of Hits. They are attempting to roll equal to or less than their armor minus the attacking unit&apos;s weapon&apos;s AP. Each die with rolls equal to or under is a save, each failed roll is a Wound.</description>
+    </rule>
+    <rule name="Use Psychotronics" id="7824-7a4b-f9bf-409a" hidden="false">
+      <description>A shocked unit cannot perform this action. The activated unit spends from its psychotronic pool to perform a psychotronic action from the Psychotronics list.</description>
+    </rule>
+    <rule name="Charge" id="ec58-87d1-b555-61e2" hidden="false">
+      <description>A shocked unit cannot charge. The activated unit moves half its speed and must end its movement adjacent (2&quot;) to an opponent&apos;s unit. Then the activated unit performs an attack action using one of its Melee type weapon profiles.</description>
+    </rule>
+    <rule name="Shock Test" id="4cf5-f7da-8cba-1a73" hidden="false">
+      <description>Roll 1d6. If the result is higher than the unit&apos;s current Health, the unit is shocked for this round. A shocked unit can only perform 1 action. When a Fireteam is shocked while adjacent (2&quot;) to an opponent&apos;s unit, that unit must immediately move 6&quot; away from the opponent&apos;s unit (this doesn&apos;t count as an action).</description>
+    </rule>
+    <rule name="Foliage" id="b2cd-df40-f07e-d24b" hidden="false">
+      <description>Foliage blocks Line of Sight.
+Fireteams can move through Foliage.
+
+
+Armor: 1
+Health: 1</description>
+    </rule>
+    <rule name="Cover" id="757e-6af0-ef1c-d5ca" hidden="false">
+      <description>Cover blocks Line of Sight and movement.
+
+
+Armor: 2
+Health: 1</description>
+    </rule>
+    <rule name="Dangerous Terrain" id="d1d2-e0bd-e3e4-dc2d" hidden="false">
+      <description>When a Unit enters a Dangerous Terrain area, they must make an Armor save. They take one Wound if they fail.</description>
+    </rule>
+    <rule name="Building/Trench" id="5a08-ac23-01a6-d1e2" hidden="false">
+      <description>Garrisoned Fireteams have 5 Armor when attacked from outside the building/trench. If the garrisoned fireteam is wounded, roll an Armor Save for the terrain; if it fails the terrain is destroyed and the fireteam takes a wound.
+
+Armor: 3
+Health: 1</description>
     </rule>
   </sharedRules>
   <sharedProfiles>
