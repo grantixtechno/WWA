@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="7" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
+<gameSystem id="sys-b3bb-18fb-bba0-a1ee" name="World War Apocalypse v0.08" battleScribeVersion="2.03" revision="8" type="gameSystem" xmlns="http://www.battlescribe.net/schema/gameSystemSchema">
   <categoryEntries>
     <categoryEntry name="Fireteam" id="cf4d-c5b2-c009-6ee5" hidden="false"/>
     <categoryEntry name="Vehicle" id="28fc-e693-9ec3-79a9" hidden="false"/>
@@ -11,7 +11,7 @@
   <forceEntries>
     <forceEntry name="Force" id="1171-afd4-9793-1bc5" hidden="false" sortIndex="1">
       <categoryLinks>
-        <categoryLink name="Rules" hidden="false" id="dcea-4b2e-59f8-2cdb" targetId="c589-39c3-89bf-49ce" type="categoryEntry"/>
+        <categoryLink name="Rules" hidden="false" id="dcea-4b2e-59f8-2cdb" targetId="c589-39c3-89bf-49ce"/>
         <categoryLink name="Command Ethos" hidden="false" id="b13e-e7c3-81d3-2b3f" targetId="ce04-4275-9630-c14e"/>
         <categoryLink name="Fireteam" hidden="false" id="48e5-c496-d776-9a4a" targetId="cf4d-c5b2-c009-6ee5">
           <constraints>
@@ -54,7 +54,7 @@
     <costType name="Points" id="6207-2ba4-fdc8-1be7" defaultCostLimit="0"/>
   </costTypes>
   <sharedSelectionEntries>
-    <selectionEntry type="upgrade" import="true" name="Command Ethos" hidden="false" id="2241-5e33-841c-26ae" sortIndex="2">
+    <selectionEntry type="upgrade" import="true" name="Command Ethos" hidden="false" id="2241-5e33-841c-26ae" sortIndex="3">
       <categoryLinks>
         <categoryLink targetId="ce04-4275-9630-c14e" id="ac43-6629-a951-b104" primary="true" name="Command Ethos"/>
       </categoryLinks>
@@ -11805,7 +11805,7 @@
         </entryLink>
       </entryLinks>
     </selectionEntry>
-    <selectionEntry type="upgrade" import="true" name="Rules" hidden="false" id="143f-609c-edab-df13" sortIndex="1" defaultAmount="1">
+    <selectionEntry type="unit" import="true" name="Rules" hidden="false" id="143f-609c-edab-df13" sortIndex="1" defaultAmount="1" subType="unit-group">
       <constraints>
         <constraint type="min" value="1" field="selections" scope="force" shared="true" id="7241-710a-f617-e1f6-min" includeChildSelections="false"/>
         <constraint type="max" value="1" field="selections" scope="force" shared="true" id="7241-710a-f617-e1f6-max" includeChildSelections="false"/>
@@ -11871,9 +11871,96 @@ Building/Trench</description>
         </rule>
       </rules>
     </selectionEntry>
+    <selectionEntry type="unit" import="true" name="Missions" hidden="false" id="8956-c1e5-db35-a6f2" sortIndex="2" subType="unit-group">
+      <categoryLinks>
+        <categoryLink targetId="c589-39c3-89bf-49ce" id="6bf1-4f5c-f1c8-31e7" primary="true" name="Rules"/>
+      </categoryLinks>
+      <selectionEntryGroups>
+        <selectionEntryGroup name="Select Mission Rules" id="df01-7126-82c5-91b5" hidden="false">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="0d51-3cec-826a-68a0-min" includeChildSelections="false"/>
+            <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="0d51-3cec-826a-68a0-max" includeChildSelections="false"/>
+          </constraints>
+          <selectionEntries>
+            <selectionEntry type="upgrade" import="true" name="Basic Mission" hidden="false" id="7cdd-ce69-67cb-7bec" sortIndex="1">
+              <rules>
+                <rule name="Basic Mission Setup" id="5307-f883-88e3-3953" hidden="false">
+                  <description>Players roll 1d6 each. Starting with the winner, players alternate placing an objective marker on the table, outside of the deployment zones and at least 12&quot; apart, until a number of objectives equal to the number of players +1 is place don the table.</description>
+                </rule>
+                <rule name="Basic Mission Scoring" id="f205-b4ba-884a-cccc" hidden="false">
+                  <description>An unshocked Fireteam may use an action to secure the objective and score a point while adjacent (2&quot;) to it.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Blow the Bridge" hidden="false" id="f125-d1e0-87a0-883b" sortIndex="2">
+              <rules>
+                <rule name="Blow the Bridge Setup" id="73d1-5ed8-c7a8-3cc2" hidden="false">
+                  <description>Lay a distinctive line of terrain to be a river going across the center of the battlefield, and place a piece of terrain to be a bridge going across it.
+Players roll 1d6 each, and the winner decides if they wish to defend the bridge or blow the bridge.</description>
+                </rule>
+                <rule name="Blow the Bridge Scoring" id="76f8-794f-2e30-784d" hidden="false">
+                  <description>The player attempting to blow the bridge does so by performing two actions:
+1. A Fireteam must be on the bridge and use an action to place an explosive charge--place a marker on the bridge to be the explosive charge.
+2. A Fireteam must use an action to detonate the charge--the bridge cannot be detonated while friendly units are on the bridge.
+
+
+The player defending the bridge may have a Fireteam adjacent (2&quot;) to the charge disable it--remove the marker when this happens.
+
+Note: Non-flying units cannot cross the river except by the bridge.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Town Hall" hidden="false" id="d1de-a82e-6d8a-b87f" sortIndex="3">
+              <rules>
+                <rule name="Town Hall Setup" id="ce41-6288-eb52-b1c3" hidden="false">
+                  <description>Ensure a building large enough for two Fireteams to garrison inside of is placed in the center of the battlefield--this is the town hall building.</description>
+                </rule>
+                <rule name="Town Hall Scoring" id="bf22-a10c-dacf-4a54" hidden="false">
+                  <description>An unshocked Fireteam may use an action to secure the building while garrisoned in it and score a point. If multiple opposing Fireteams are garrisoned in the building, neither can secure it.
+
+The first player to score 3 points wins. If the building is destroyed, both players lose.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Demolition" hidden="false" id="a527-9a19-9ec2-7357" sortIndex="4">
+              <rules>
+                <rule name="Demolition Setup" id="4aa2-e939-9a3b-7faf" hidden="false">
+                  <description>Lay a distinctive piece of terrain to be a weapons cache near the center of the battlefield.
+
+Players roll 1d6 each, and the winner decides if they wish to defend the cache or blow the cache.</description>
+                </rule>
+                <rule name="Demolition Scoring" id="c738-8769-78a7-70c5" hidden="false">
+                  <description>The player attempting to blow the cache does so by performing two actions:
+1. A unit must be garrisoned in the cache and use an action to place an explosive charge--place a marker in the cache to be the explosive charge.
+2. A unit must use an action to detonate the charge--the cache cannot be detonated while friendly units are within 12&quot; of the terrain feature.
+
+The player defending the cache may have a unit adjacent (2&quot;) to the charge disable it--remove the marker when this happens.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+            <selectionEntry type="upgrade" import="true" name="Extraction" hidden="false" id="b35c-d9b3-f077-5701" sortIndex="5">
+              <rules>
+                <rule name="Extraction Setup" id="ed97-a9fa-f089-281b" hidden="false">
+                  <description>Place a model surrounded by terrain or garrisoned in terrain near the center of the battlefield. This will be the VIP the players are trying to extract.</description>
+                </rule>
+                <rule name="Extraction Scoring" id="cd80-1006-2102-f0ca" hidden="false">
+                  <description>An unshocked Fireteam may use an action to secure the VIP. While secured, the VIP moves with the Fireteam. If that Fireteam is destroyed, the VIP remains still. It can be secured by a new Fireteam.
+
+The first player to escort the VIP to their deployment zone wins.</description>
+                </rule>
+              </rules>
+            </selectionEntry>
+          </selectionEntries>
+        </selectionEntryGroup>
+      </selectionEntryGroups>
+      <constraints>
+        <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="1e7c-321f-be1c-f709-min" includeChildSelections="false"/>
+        <constraint type="max" value="1" field="selections" scope="parent" shared="true" id="1e7c-321f-be1c-f709-max" includeChildSelections="false"/>
+      </constraints>
+    </selectionEntry>
   </sharedSelectionEntries>
   <entryLinks>
-    <entryLink import="true" name="Command Ethos" hidden="false" id="49c3-886c-2789-8432" type="selectionEntry" targetId="2241-5e33-841c-26ae" sortIndex="2"/>
+    <entryLink import="true" name="Command Ethos" hidden="false" id="49c3-886c-2789-8432" type="selectionEntry" targetId="2241-5e33-841c-26ae" sortIndex="3"/>
     <entryLink import="true" name="Rifle Team" hidden="false" id="c403-02f6-ae6e-032e" type="selectionEntry" targetId="09f3-d1b9-ef49-d2f0" sortIndex="3"/>
     <entryLink import="true" name="Gunnery Team" hidden="false" id="9f56-b43c-950a-c0c5" type="selectionEntry" targetId="45a2-244d-cdd1-dc57" sortIndex="4"/>
     <entryLink import="true" name="Heavy Support Team" hidden="false" id="5c27-e07e-0e23-aa8d" type="selectionEntry" targetId="72cb-a7bd-c052-0548" sortIndex="5"/>
@@ -11884,6 +11971,7 @@ Building/Trench</description>
     <entryLink import="true" name="Armored Fighting Vehicle" hidden="false" id="1c86-5493-fa4c-f767" type="selectionEntry" targetId="17b7-35c3-9c2e-adb6" sortIndex="10"/>
     <entryLink import="true" name="Heavy Gun Platform" hidden="false" id="863e-0168-2d84-631c" type="selectionEntry" targetId="2453-64b5-8d63-7e88" sortIndex="11"/>
     <entryLink import="true" name="Rules" hidden="false" id="9e79-dfe7-f2f8-6271" type="selectionEntry" targetId="143f-609c-edab-df13" sortIndex="1"/>
+    <entryLink import="true" name="Missions" hidden="false" id="7fcc-86ac-ca6d-30e7" type="selectionEntry" targetId="8956-c1e5-db35-a6f2" sortIndex="2"/>
   </entryLinks>
   <sharedRules>
     <rule name="Armor Piercing" id="022c-c210-1615-1d75" hidden="false">
