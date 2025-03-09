@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalogue library="false" id="658b-4505-3a91-68c9" name="Military Structure" gameSystemId="sys-b3bb-18fb-bba0-a1ee" gameSystemRevision="13" revision="1" authorContact="grantixtechno@gmail.com" authorName="Grant Miller" battleScribeVersion="2.03" type="catalogue" xmlns="http://www.battlescribe.net/schema/catalogueSchema">
+  <forceEntries>
+    <forceEntry name="Infantry Platoon" id="1e41-5ae5-6eca-ee6c" hidden="false" sortIndex="1">
+      <constraints>
+        <constraint type="max" value="1" field="forces" scope="roster" shared="true" id="c4f6-8ba2-a45b-e4f5" includeChildSelections="false"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink name="Rules" hidden="false" id="0e48-1df3-6ac4-151d" targetId="c589-39c3-89bf-49ce" type="categoryEntry"/>
+        <categoryLink name="Command Ethos" hidden="false" id="8cd9-0d61-0c1c-ea5e" targetId="ce04-4275-9630-c14e" type="categoryEntry"/>
+        <categoryLink name="Fireteam" hidden="false" id="3c5b-ebcf-a52e-8405" targetId="cf4d-c5b2-c009-6ee5" type="categoryEntry">
+          <constraints>
+            <constraint type="min" value="50" field="selections" scope="parent" shared="true" id="fd6a-56a3-b1d6-7462" percentValue="true"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Vehicle" hidden="false" id="fcbc-3995-acf4-aced" targetId="28fc-e693-9ec3-79a9" type="categoryEntry"/>
+      </categoryLinks>
+    </forceEntry>
+    <forceEntry name="Mechanized Platoon" id="c861-2be2-7b57-da9d" hidden="false" sortIndex="2">
+      <categoryLinks>
+        <categoryLink name="Rules" hidden="false" id="1982-5a24-6d22-4e64" targetId="c589-39c3-89bf-49ce" type="categoryEntry"/>
+        <categoryLink name="Command Ethos" hidden="false" id="7b19-235d-a293-ef4a" targetId="ce04-4275-9630-c14e" type="categoryEntry"/>
+        <categoryLink name="Fireteam" hidden="false" id="ca5a-07fb-0ccd-0cb7" targetId="cf4d-c5b2-c009-6ee5" type="categoryEntry">
+          <constraints>
+            <constraint type="min" value="25" field="selections" scope="parent" shared="true" id="3a71-15f1-a6b5-b121" percentValue="true"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Vehicle" hidden="false" id="e715-e740-4c67-c47d" targetId="28fc-e693-9ec3-79a9" type="categoryEntry">
+          <constraints>
+            <constraint type="min" value="50" field="selections" scope="parent" shared="true" id="8b7f-6a98-ac5a-f5d4" percentValue="true"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Armored Vehicle" hidden="false" id="fee1-8661-bca8-3bb8" targetId="3991-adb6-157c-ab62" type="categoryEntry"/>
+      </categoryLinks>
+      <constraints>
+        <constraint type="max" value="1" field="forces" scope="parent" shared="true" id="3bf6-a2d0-3290-a18d" includeChildSelections="false"/>
+      </constraints>
+    </forceEntry>
+    <forceEntry name="Tank Platoon" id="6438-904a-261a-e0cc" hidden="false" sortIndex="3">
+      <constraints>
+        <constraint type="max" value="1" field="forces" scope="parent" shared="true" id="d89e-8fdd-30f5-e420" includeChildSelections="false"/>
+      </constraints>
+      <categoryLinks>
+        <categoryLink name="Rules" hidden="false" id="09c2-a032-6467-6869" targetId="c589-39c3-89bf-49ce" type="categoryEntry"/>
+        <categoryLink name="Command Ethos" hidden="false" id="0766-4f51-34d6-5042" targetId="ce04-4275-9630-c14e" type="categoryEntry"/>
+        <categoryLink name="Fireteam" hidden="false" id="1ca4-093b-a9fe-df25" targetId="cf4d-c5b2-c009-6ee5" type="categoryEntry">
+          <constraints>
+            <constraint type="min" value="1" field="selections" scope="parent" shared="true" id="f9c4-998b-f409-6b10" percentValue="false"/>
+          </constraints>
+        </categoryLink>
+        <categoryLink name="Vehicle" hidden="false" id="9612-7975-6f08-03e9" targetId="28fc-e693-9ec3-79a9" type="categoryEntry"/>
+        <categoryLink name="Armored Vehicle" hidden="false" id="e238-dc16-16c3-d615" targetId="3991-adb6-157c-ab62" type="categoryEntry">
+          <constraints>
+            <constraint type="min" value="50" field="selections" scope="parent" shared="true" id="3091-0c62-0dcb-e8eb" percentValue="true"/>
+          </constraints>
+        </categoryLink>
+      </categoryLinks>
+    </forceEntry>
+  </forceEntries>
+</catalogue>
